@@ -1,0 +1,93 @@
+/* start of product css */
+
+*{
+    box-sizing: border-box;
+   
+}
+
+/*adding dimentions around the card*/
+.product{
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+   text-align: center;
+   transform:translateY(5%)
+   
+   
+    
+   
+
+
+}
+ body {
+    width: 100%;
+    
+ }
+
+/*setting inner portion of the card*/
+.main-container{
+    display: grid; 
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    
+}
+
+
+ .product img{  /* adding effects to the product card*/
+
+   width: 100%;
+   border-top-right-radius: 20px;
+   border-top-left-radius: 20px;
+   object-fit: contain;
+   transition: transform
+ } 
+.product:hover img{
+  transform: scale(1.1);
+  filter: blur(15px);
+}
+
+ .text{
+  position: absolute;
+  top: 40%;
+  font-size: 20px;
+  color: black;
+  font-weight: lighter;
+  opacity: 0;
+  transition: 0.3s ease;
+ }
+ .image-box:hover .text{
+  opacity: 1;
+ }
+   
+ 
+ .product-detail{/*adding details*/
+margin-left: 50px;
+text-align: center;
+align-items: center;
+ }
+ 
+ 
+
+
+
+
+ .product-detail h2{
+    font-size: 24px;
+ }
+
+ .btn-btn{/*setting buttons and making them interactive*/
+   background-color: black;
+   color: aliceblue;
+   font-size: 15px;
+   padding: 10px 20px;
+   border-radius: none;
+   border-radius: 20px;
+   cursor: pointer;
+
+
+ }
+
+ .btn-btn:hover{
+   background-color: slategrey;
+
+ }
+ /* end of product css */

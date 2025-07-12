@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: 0.5s !important;
+    }
+
+    :root {
+        --maincolor: goldenrod;
+    }
+
+    /* Centering everything */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+
+    
+    /* Form Styling */
+    form {
+        background-color: wheat;
+        padding: 20px;
+        border: 2px solid black;
+        width: 50%;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    input, textarea {
+        width: 80%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+
+
+
+<h2 style="color: orangered; margin-top: 20px;">Form</h2>
+
+<form name="messageForm" onsubmit="validateForm(); return false;">
+    <label>First Name:</label>
+    <input type="text" name="fname">
+    <br><br>
+    
+    <label>Middle Name:</label>
+    <input type="text" name="Mname">
+    <br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lname">
+    <br><br>
+
+    <label>Gender:</label>
+    <br>
+    <label><input type="radio" name="genderDetails" value="male" checked> Male</label>
+    <label><input type="radio" name="genderDetails" value="female"> Female</label>
+    <label><input type="radio" name="genderDetails" value="other"> Other</label>
+    <label><input type="radio" name="genderDetails" value="prefer_not_to_say"> Prefer not to say</label>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="text" name="Email">
+    <br><br>
+
+    <label>Message:</label>
+    <textarea rows="5" cols="35" name="message" placeholder="Enter your message"></textarea>
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+function validateForm() {
+    var firstName = document.forms["messageForm"]["fname"].value;
+    var lastName = document.forms["messageForm"]["lname"].value;
+    var Email = document.forms["messageForm"]["Email"].value;
+    var messageDetails = document.forms["messageForm"]["message"].value;
+
+    if (firstName == "" || lastName == "" || Email == "" || messageDetails == "") {
+        alert("Please fill in all required fields! Empty fields are present.");
+    } else {
+        alert("Thank you for your input! We value your opinion.");
+    }
+}
+</script>
+
+</body>
+</html>

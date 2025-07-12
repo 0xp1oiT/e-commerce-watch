@@ -1,0 +1,322 @@
+<div class="form">
+    <!DOCTYPE html>
+<html>
+<head>
+<title>Form validation</title>
+<style>
+    *{
+margin: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+transition: 0.5s !important;
+}
+
+:root{
+--maincolor: goldenrod;
+}
+    /* header */
+header{
+width: 100%;
+background: #000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 50px;
+}
+
+
+
+
+header .logo{
+width: 50px;
+height: 50px;
+}
+header .logo img{
+border-radius: 20px;
+}
+
+header nav ul {
+display: flex;
+list-style: none;
+}
+
+header ul a{
+color: white;
+margin: 20px;
+font-size: 18px;
+text-decoration: none;
+
+}
+
+header .active{
+color: var(--maincolor);
+}
+
+
+</style>
+</head>
+
+<body>
+
+    <!--start of header  -->
+  <header>
+    <div class="logo">
+        <img src="./image/logo.jpg" alt="" width="100%" height="100%">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/homedetail.html">Home</a></li>
+            <li><a href="blogdetail.html">Blog Page</a></li>
+            <li><a href="/productdetail.html">Product Page</a></li>
+            <li><a href="Researchdetail.html">Research Section</a></li>
+            <li><a href="/about.html">About us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<H2 style="text-decoration: solid;color: orangered; padding: 20px;">Form
+        
+</H2>
+
+
+
+<form name="messageForm" onsubmit="validateForm()" style="text-decoration: solid;color: orangered;background-color: white;margin: 10px;padding: 10px;border: 2px solid black;">
+    <label style="text-decoration: solid;color: orangered;">First Name: </label>
+    <input type="text" name="fname">
+    <br>
+    <br>
+
+    <label style="text-decoration: solid;color: orangered;">Middle Name: </label>
+    <input type="text" name="Mname">
+    <br>
+    <br>
+
+    <label style="text-decoration: solid;color: orangered;">Last Name: </label>
+    <input type="text" name="lname">
+    <br>
+    <br>
+
+    <label style="text-decoration: solid;color: orangered;">Gender: </label>
+    <input type="radio" name="genderDetails" value="male" checked>Male
+    <input type="radio" name="genderDetails" value="female">Female
+    <br>
+    <br>
+
+    <label style="text-decoration: solid;color: orangered;">Email: </label>
+    <input type="text" name="Email">
+    <br>
+    <br>
+
+    <label style="text-decoration: solid;color: orangered;">Message:</label>
+    <br>
+    <textarea rows="20" cols="35" name="message" placeholder="Enter your message"></textarea>
+    <br>
+    <br>
+
+    <input type="submit" value="Submit Button"style="text-decoration: solid;color: orangered;">
+</form>
+
+</div>
+
+<script type="text/javascript">
+    function validateForm() 
+    // function: reusability, modularity, and organization
+    {
+        var firstName = document.forms["messageForm"]["fname"].value;
+        var middleName = document.forms["messageForm"]["Mname"].value;
+        var lastName = document.forms["messageForm"]["lname"].value;
+        var Email = document.forms["messageForm"]["Email"].value;
+        var messageDetails = document.forms["messageForm"]["message"].value;
+        var gender = document.querySelector('input[name="genderDetails"]:checked');
+
+        //alert(messageDetails);
+        if (firstName == "" || lastName == "" || Email == "" || messageDetails == "") 
+        {
+            alert("Please fill in all required fields!!!Empty fields are present.");
+        }
+
+        else
+        {
+            alert("Thank you for your input!!! We value your openion.")
+        }
+    }
+</script>
+</body>
+</html>
+</div>
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: 0.5s !important;
+    }
+
+    :root {
+        --maincolor: goldenrod;
+    }
+
+    /* Centering everything */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+
+    
+    /* Form Styling */
+    form {
+        background-color: wheat;
+        padding: 20px;
+        border: 2px solid black;
+        width: 50%;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    input, textarea {
+        width: 80%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+
+
+
+<h2 style="color: orangered; margin-top: 20px;">Form</h2>
+
+<form name="messageForm" onsubmit="validateForm(); return false;">
+    <label>First Name:</label>
+    <input type="text" name="fname">
+    <br><br>
+    
+    <label>Middle Name:</label>
+    <input type="text" name="Mname">
+    <br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lname">
+    <br><br>
+
+    <label>Gender:</label>
+    <br>
+    <label><input type="radio" name="genderDetails" value="male" checked> Male</label>
+    <label><input type="radio" name="genderDetails" value="female"> Female</label>
+    <label><input type="radio" name="genderDetails" value="other"> Other</label>
+    <label><input type="radio" name="genderDetails" value="prefer_not_to_say"> Prefer not to say</label>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="text" name="Email">
+    <br><br>
+
+    <label>Message:</label>
+    <textarea rows="5" cols="35" name="message" placeholder="Enter your message"></textarea>
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+function validateForm() {
+    var firstName = document.forms["messageForm"]["fname"].value;
+    var lastName = document.forms["messageForm"]["lname"].value;
+    var Email = document.forms["messageForm"]["Email"].value;
+    var messageDetails = document.forms["messageForm"]["message"].value;
+
+    if (firstName == "" || lastName == "" || Email == "" || messageDetails == "") {
+        alert("Please fill in all required fields! Empty fields are present.");
+    } else {
+        alert("Thank you for your input! We value your opinion.");
+    }
+}
+</script>
+
+</body>
+
+
+
+
+<footer>
+    <div class="foot">
+        <div class="panel">
+            <h1>About </h1>
+            <ul>
+                <li><a href="">About us</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+        </div>
+        <div class="Contact ">
+            <h2>Contact us</h2>
+            <ul>
+                <li>9814847651</li>
+                <li>Visit us : Kathmandu,Bhaisepati</li>
+                <li>luckymikrani2@gmail.com</li>
+            </ul>
+
+        </div>
+        <div class="coming">
+            <h2>Mobile app coming soon</h2>
+            <ul>
+                <li>#Stay tunned</li>
+                
+            </ul>
+
+        </div>
+    </div>
+
+</footer>
+<!--end of footer-->
+
+<!--start of footer css-->
+<style>
+.foot{
+    position: relative; 
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    color:white;
+    background-color:black; /* Or any color you like */
+    text-align: center;
+}
+
+
+.foot{
+    height:300px;
+    display: flex;
+    justify-content: space-between;
+    padding:50px 50px;
+}
+
+.foot li{
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.foot a{
+    color:white;
+}
+</style>
+<!--end of footer css-->
+
